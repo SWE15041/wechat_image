@@ -33,14 +33,14 @@ def download_img(target_url, img_dir, pattern, prefix):
 
 if __name__ == '__main__':
     # 要爬取的网页
-    target_url = "https://mp.weixin.qq.com/s?src=11&timestamp=1641348173&ver=3539&signature=OdFTLT-dcR3tkPsPJeSfwIJ5Pqv8w8Ru-EcBL*NahL8m4enbzZlmDXRSwZX-mtlFaKB61VIRbZ*LMgPB0zdhuLvzQv5gQ3wPnms-pUrWwJ4*9D4a822Sd*6qFlr8zQA9&new=1"
+    target_url = "https://mp.weixin.qq.com/s?src=11&timestamp=1641536492&ver=3543&signature=sor884q1Ro8voZGA*Uf5a50dbFVkSyehtYVqO4JV6nGr8mtXQXhOA9f4jjKQ3eFsUuErgodT7lNRIr96C2o-qO1GP9VaPfhI2xwQ5NMlJm4AGknl-K2tXO82Y9*66TA7&new=1"
     # 本地存放目录
-    img_dir = "/Users/yannilan/workspace/swe15041/BQB/吴京中国"
+    img_dir = "/Users/yannilan/workspace/swe15041/BQB/你为什么不回我消息"
     # 要爬的url正则
-    # pattern = 'data-src=\"https:\S{1,}.?wx_fmt=[jpeg|gif|png]+\"'
-    pattern = 'data-src=\"https:\S{1,}\"'
+    pattern = 'data-src=\"https:\S{1,}.?wx_fmt=[jpeg|gif|png]+'
+    # pattern = 'data-src=\"https:\S{1,}\"'
     if not os.path.exists(img_dir):
         os.mkdir(img_dir)
     # 下载图片
-    prefix = "吴京中国_"
+    prefix = "你为什么不回我消息_"
     download_img(target_url, img_dir, pattern, prefix)
