@@ -33,14 +33,14 @@ def download_img(target_url, img_dir, pattern, prefix):
 
 if __name__ == '__main__':
     # 要爬取的网页
-    target_url = "https://mp.weixin.qq.com/s?src=11&timestamp=1641536492&ver=3543&signature=sor884q1Ro8voZGA*Uf5a50dbFVkSyehtYVqO4JV6nGr8mtXQXhOA9f4jjKQ3eFsUuErgodT7lNRIr96C2o-qO1GP9VaPfhI2xwQ5NMlJm4AGknl-K2tXO82Y9*66TA7&new=1"
+    target_url = "https://mp.weixin.qq.com/s?__biz=MzUxNjkyNjU4OA==&mid=2247487183&idx=1&sn=d2f82fbe498920e5d372aeb285cbd70e&chksm=f99eb3dccee93aca538ad49aebf9b888db035e730123f48a91f652ac880899d4ae8ed33e74ee&token=669374865&lang=zh_CN#rd"
     # 本地存放目录
-    img_dir = "/Users/yannilan/workspace/swe15041/BQB/你为什么不回我消息"
+    img_dir = "/Users/yanni/workspace/lyn/BQB/植物0221"
     # 要爬的url正则
     pattern = 'data-src=\"https:\S{1,}.?wx_fmt=[jpeg|gif|png]+'
     # pattern = 'data-src=\"https:\S{1,}\"'
     if not os.path.exists(img_dir):
         os.mkdir(img_dir)
     # 下载图片
-    prefix = "你为什么不回我消息_"
+    prefix = "植物_1_"
     download_img(target_url, img_dir, pattern, prefix)
