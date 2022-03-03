@@ -33,14 +33,14 @@ def download_img(target_url, img_dir, pattern, prefix):
 
 if __name__ == '__main__':
     # 要爬取的网页
-    target_url = "https://mp.weixin.qq.com/s?src=11&timestamp=1641536492&ver=3543&signature=sor884q1Ro8voZGA*Uf5a50dbFVkSyehtYVqO4JV6nGr8mtXQXhOA9f4jjKQ3eFsUuErgodT7lNRIr96C2o-qO1GP9VaPfhI2xwQ5NMlJm4AGknl-K2tXO82Y9*66TA7&new=1"
+    target_url = "https://mp.weixin.qq.com/s?src=11&timestamp=1645682930&ver=3639&signature=zkAHBZ0ujQt2DaUoHJz*bID9XH1pgbdeh66udkFtp7F951TQu9KaYo2njMCLN355QfAuEFa6ZlPRoUgaps*VxfVne1KNRkTc6YbsFtYkOXufh4cBN-OqdiBT3Jb4qPGx&new=1"
     # 本地存放目录
-    img_dir = "/Users/yannilan/workspace/swe15041/BQB/你为什么不回我消息"
+    img_dir = "/Users/yannilan/workspace/swe15041/BQB/纸团套路0224"
     # 要爬的url正则
     pattern = 'data-src=\"https:\S{1,}.?wx_fmt=[jpeg|gif|png]+'
     # pattern = 'data-src=\"https:\S{1,}\"'
     if not os.path.exists(img_dir):
         os.mkdir(img_dir)
     # 下载图片
-    prefix = "你为什么不回我消息_"
+    prefix = "纸团套路0224_2_"
     download_img(target_url, img_dir, pattern, prefix)

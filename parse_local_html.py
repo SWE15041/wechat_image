@@ -13,11 +13,8 @@ def download_img(parsedFilename, img_dir, pattern, prefix):
     # 解析网页
     results = re.findall(pattern, html)
     count = 0
-    for result in results:
-        url = result.split('\"')[1].split("?")[0]
-        # suffix = "gif"
-        # suffix = url.split('=')[-1]
-        suffix = "jpg"
+    for url in results:
+        suffix = url.split('.')[-1]
         filename = prefix + str(count) + "." + suffix
         response = requests.get(url, headers=headers)
         with open(img_dir + '/' + filename, 'wb') as f:
@@ -29,14 +26,15 @@ def download_img(parsedFilename, img_dir, pattern, prefix):
 
 if __name__ == '__main__':
     # 本地存放目录
-    img_dir = "/Users/yannilan/workspace/swe15041/BQB/猫"
+    img_dir = "/Users/yannilan/workspace/swe15041/BQB/小狗0302"
     if not os.path.exists(img_dir):
         os.mkdir(img_dir)
     # 下载图片名前缀
-    prefix = "猫1_"
+    prefix = img_dir.split('/')[-1]+"_3_"
     # 被解析的文件
-    parsedFilename = "./local.html"
+    parsedFilename = "/Users/yannilan/workspace/Chancetop/Automation/python/local.html"
     # 要爬的url正则
-    pattern = '<img src=\"https:\S{1,}\"'
-    #
+    # pattern = '<img src=\"https:\S{1,}\"'
+    # pattern = '<img[\s|\S]*src=\"(https:\S{1,})\"'
+    pattern = 'src="(https:\S{1,})"'
     download_img(parsedFilename, img_dir, pattern, prefix)
